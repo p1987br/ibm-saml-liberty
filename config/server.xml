@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+    <featureManager>
+    <!-- tag::servlet[] -->
+        <feature>servlet-4.0</feature>
+    <!-- end::servlet[] -->
+    <!-- tag::springboot[]
+        <feature>springBoot-2.0</feature> -->
+    <!-- end::springboot[] -->
+	<!-- tag::admincenter[] -->
+	<!--	<feature>adminCenter-1.0</feature> -->
+	<!-- end::admincenter[] -->
+	<!-- tag::security - registry etc -->
+		<feature>appSecurity-3.0</feature> 
+	<!-- end::security - registry etc -->
+		
+	<!-- tag::JAX libraries -->	
+		<feature>jaxrsClient-2.1</feature>
+		<feature>jaxrs-2.1</feature>
+	<!-- end::security - registry etc -->
+
+	<!-- tag::SAML libraries -->	
+		<feature>samlWeb-2.0</feature>
+	<!-- end::SAML libraries -->		
+	
+		<feature>transportSecurity-1.0</feature>
+		<feature>ssl-1.0</feature>
+	
+    </featureManager>
+
+	<keyStore id="defaultKeyStore" password="password" />
+
+	<samlWebSso20 
+		id="defaultSP" 
+		idpMetadata="/opt/ibm/wlp/usr/servers/defaultServer/resources/security/idpMetadata.xml" 
+		mapToUserRegistry="No"
+		spLogout="true"
+		tokenReplayTimeout="1m"
+		groupIdentifier="groups"
+		>  
+	</samlWebSso20>
+
+	<!-- tag::BASIC User Registry for admin-->
+	<basicRegistry id="basic">
+		<user name="admin" password="adminpwd" />
+		<group name="user">
+			<member name="admin" />
+		</group>
+	</basicRegistry>
+	<!-- end::BASIC User Registry -->
+	
+	<administrator-role>
+		<user>admin</user>
+		<user>peter.bradac@sk.ibm.com</user>
+	</administrator-role>
+
+	<!-- tag:TAI Interceptor 
+	<library id="simpleTAI"> 
+		<fileset dir="${server.config.dir}" includes="simpleTAI.jar"/> 
+	</library>
+	
+	<trustAssociation id="myTrustAssociation" invokeForUnprotectedURI="false" 
+                  failOverToAppAuthType="false">
+		<interceptors id="simpleTAI" enabled="true"  
+                  className="com.ibm.liberty.tai.Interceptor" 
+                  invokeBeforeSSO="false" invokeAfterSSO="true" libraryRef="simpleTAI">
+				  <properties application="myApp"/>
+				  <properties application="myEEApp"/>
+		</interceptors> 
+	</trustAssociation> 
+	-->
+	<!-- end:TAI Interceptor -->
+
+    <!-- tag::httpport[] -->
+    <httpEndpoint id="defaultHttpEndpoint"
+				  host="*"
+                  httpPort="8080"
+                  httpsPort="9443" />
+    <!-- end::httpport[] -->
+
+	<!-- tag::application[] - deployed application
+	<application 
+		type="spring" 
+		location="app.jar"
+		name="myApp"
+		context-root="rhocp"
+	/>-->
+	
+	<!-- tag::application[] - deployed application -->
+    <application 
+		type="war" 
+		location="samlJavaEEApp.war"
+		name="samlJavaEEApp"
+		context-root="rhocp-ee">
+
+	<!-- tag::additional role binding[] -->
+	    <application-bnd>
+			<security-role name="user-contributor">
+				  <group name="ext-contractor" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-contractor"/>
+				  <group name="ext-employee" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-employee"/>
+			</security-role>
+			
+			<security-role name="user-write">
+				  <group name="ext-owner" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-owner"/>
+			</security-role>
+			
+			<security-role name="user-special">
+				  <group name="ext-special" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-special"/>
+			</security-role>
+			
+			<security-role name="user-read">
+                <special-subject type="ALL_AUTHENTICATED_USERS"/>
+            </security-role>
+			
+		</application-bnd>
+    </application>		
+
+	<remoteFileAccess>
+		<writeDir>${server.config.dir}</writeDir>
+	</remoteFileAccess>
+
+    <!-- tag::springBootApplication[] : Alternative declaration of Spring-Boot application-->
+    <!--
+	<springBootApplication id="app" 
+                           location="app.jar"
+                           name="app" />
+	-->
+    <!-- end::springBootApplication[] -->
+
+
+</server>

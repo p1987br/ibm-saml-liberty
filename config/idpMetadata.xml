@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor entityID="http://www.okta.com/exk16hr5uy7dJkso24x7" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"><md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>MIIDpDCCAoygAwIBAgIGAXLmAuR6MA0GCSqGSIb3DQEBCwUAMIGSMQswCQYDVQQGEwJVUzETMBEG
+A1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEU
+MBIGA1UECwwLU1NPUHJvdmlkZXIxEzARBgNVBAMMCmRldi0yODY5MzkxHDAaBgkqhkiG9w0BCQEW
+DWluZm9Ab2t0YS5jb20wHhcNMjAwNjI0MTEwNjI4WhcNMzAwNjI0MTEwNzI4WjCBkjELMAkGA1UE
+BhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDTALBgNV
+BAoMBE9rdGExFDASBgNVBAsMC1NTT1Byb3ZpZGVyMRMwEQYDVQQDDApkZXYtMjg2OTM5MRwwGgYJ
+KoZIhvcNAQkBFg1pbmZvQG9rdGEuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+pn6xPGHAG6bAsP0greZNF3CueQoDL7voKR/Dy0Dp6H0KhUi6AnpMW1wJGkooTT61HuVgcJbsu4Ms
+znbmXyDsbrNsZ1OaD2dhwkN5WrsRc1vTqsBsJ6RKp9xfavlOR/bu2FpxRpnvNYlytLXc26rCP/UN
+kv3LgmFQydviTea4/StiJPRopkGIhU3bXffTf2CB6CUzaD29BOoRVViY7dwabLgV9mBppquEfta4
+OyoT2KEI6IVgMklUob1l0GK0/H65gUSOtv7BGJVrm5hgpdBnwdkBnIFksxliJ/wx9lK5Qfk++3S7
+gWXubGgHW3hhUfaR6eYs7vEJayQqyWAY5lGjfwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBL22w4
++lC0k+8FGICZyYwkQM5DsZeo/MMCgMtR0TqEYyAlLQo7hX2MVwcTo0o6rocrFUo31SJrGXeelxGC
+f3kAzD3rSKkSB4CI8H5wPLjLiZ9hj4H1waIM84DhDNkIcjHhAIAXYnMeE5ziJoLXLVHoBgYTOqay
+kaDOg2XHOhYiztdZl05A5Fb9v/CAfvWKv+7dWF2jdwkyvY8kpZHls7AStHXLnCKoIk1L8bSUJZ6/
+3fga1FURiRP6w9AEFdnAsF1Q05MatrM1gnFCh+OpozxTqtUEFqdprSvpa5zBtue5w4k2H65QEGff
+3SLhoNMaqL3omM7ud2zqQzziAg92KToi</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev-286939.okta.com/app/ibmdev286939_myjavaeeapplication_1/exk16hr5uy7dJkso24x7/slo/saml"/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev-286939.okta.com/app/ibmdev286939_myjavaeeapplication_1/exk16hr5uy7dJkso24x7/slo/saml"/><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev-286939.okta.com/app/ibmdev286939_myjavaeeapplication_1/exk16hr5uy7dJkso24x7/sso/saml"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev-286939.okta.com/app/ibmdev286939_myjavaeeapplication_1/exk16hr5uy7dJkso24x7/sso/saml"/></md:IDPSSODescriptor></md:EntityDescriptor>
