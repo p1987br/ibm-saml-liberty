@@ -97,16 +97,16 @@
 	<!-- tag::additional role binding[] -->
 	    <application-bnd>
 			<security-role name="user-contributor">
-				  <group name="ext-contractor" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-contractor"/>
-				  <group name="ext-employee" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-employee"/>
+				  <group name="ext-contractor" access-id="group:http://www.okta.com/exk17jn754nJ3pOaG4x7/ext-contractor"/>
+				  <group name="ext-employee" access-id="group:http://www.okta.com/exk17jn754nJ3pOaG4x7/ext-employee"/>
 			</security-role>
 			
 			<security-role name="user-write">
-				  <group name="ext-owner" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-owner"/>
+				  <group name="ext-owner" access-id="group:http://www.okta.com/exk17jn754nJ3pOaG4x7/ext-owner"/>
 			</security-role>
 			
 			<security-role name="user-special">
-				  <group name="ext-special" access-id="group:http://www.okta.com/exk16hr5uy7dJkso24x7/ext-special"/>
+				  <group name="ext-special" access-id="group:http://www.okta.com/exk17jn754nJ3pOaG4x7/ext-special"/>
 			</security-role>
 			
 			<security-role name="user-read">
